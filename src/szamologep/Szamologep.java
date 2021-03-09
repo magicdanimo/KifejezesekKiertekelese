@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Szamologep {
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         System.out.println("Hello there");
         ArrayList<String> segedverem = new ArrayList<>();
         ArrayList<String> lengyelForm = new ArrayList<>();
@@ -22,18 +23,83 @@ public class Szamologep {
 //        for (int i = 0; i < lengyelForm.size(); i++) {
 //
 //        }
+=======
+>>>>>>> 9462c2b62cef2dafb44faebcc8fec4f48384bcbc
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Adj meg egy matematikai kifejezést: ");
         String matematikai = sc.nextLine();
 
+<<<<<<< HEAD
         lengyelForm = lengyelFormAlakit(matematikai);
         
         for (String akt : lengyelForm) {
             System.out.print(akt);
         }
         System.out.println("");
+=======
+        lengyelFormAlakit(matematikai);
+        ArrayList<String> lengyelform = new ArrayList<>();
+        //2+6*(9-5) | 2695-*+ | Elvárt eredmény: 26
+        lengyelform.add("2");
+        lengyelform.add("6");
+        lengyelform.add("9");
+        lengyelform.add("5");
+        lengyelform.add("-");
+        lengyelform.add("*");
+        lengyelform.add("+");
+        System.out.println(lengyelFormSzamit(lengyelform));
     }
+
+    private static float lengyelFormSzamit(ArrayList<String> lengyelform) {
+
+        
+        ArrayList<String> segedverem = new ArrayList<>();
+        
+        String elem;
+        for (int i = 0; i < lengyelform.size(); i++) {
+            elem = lengyelform.get(i);
+            if (elem.equals("1") || elem.equals("2") || elem.equals("3") || elem.equals("4") || elem.equals("5") || elem.equals("6") || elem.equals("7") || elem.equals("8") || elem.equals("9") || elem.equals("0")) {
+                segedverem.add(elem);
+            }
+            if (elem.equals("+") || elem.equals("-") || elem.equals("/") || elem.equals("*")) {
+                char művelet = elem.charAt(0);
+                float érték1 = Float.parseFloat(segedverem.get(segedverem.size()-1));
+                float érték2 = Float.parseFloat(segedverem.get(segedverem.size()-2));
+                for (int j = 0; j < 2; j++) {
+                    segedverem.remove(segedverem.size()-1);
+                }
+                float eredmény = kiszámol(érték1, művelet, érték2);
+                segedverem.add(String.valueOf(eredmény));
+            }
+        }
+        String végeredmény = segedverem.get(0);
+        return Float.parseFloat(végeredmény);
+>>>>>>> 9462c2b62cef2dafb44faebcc8fec4f48384bcbc
+    }
+    
+    private static float kiszámol(float érték1, char művelet, float érték2) {
+        float eredmény = 0;
+        switch(művelet) {
+            case '-':
+                eredmény = érték2-érték1;
+                break;
+                
+            case '+':
+                eredmény = érték1+érték2;
+                break;
+                
+            case '/':
+                eredmény = érték2/érték1;
+                break;
+                
+            case '*':
+                eredmény = érték1*érték2;
+                break;               
+        }
+        return eredmény;
+    }
+    
 
     private static ArrayList lengyelFormAlakit(String matematikai) {
         ArrayList<String> lengyelform = new ArrayList<>();
@@ -115,4 +181,6 @@ public class Szamologep {
 //	elágazás vége
 //Ciklus vége
 //Végeredmény=veremből()
-}
+
+    }
+
