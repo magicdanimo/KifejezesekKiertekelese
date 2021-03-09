@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Szamologep {
 
     public static void main(String[] args) {
-<<<<<<< HEAD
+
         System.out.println("Hello there");
         ArrayList<String> segedverem = new ArrayList<>();
         ArrayList<String> lengyelForm = new ArrayList<>();
@@ -23,21 +23,21 @@ public class Szamologep {
 //        for (int i = 0; i < lengyelForm.size(); i++) {
 //
 //        }
-=======
->>>>>>> 9462c2b62cef2dafb44faebcc8fec4f48384bcbc
+
+
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Adj meg egy matematikai kifejezést: ");
         String matematikai = sc.nextLine();
 
-<<<<<<< HEAD
+
         lengyelForm = lengyelFormAlakit(matematikai);
         
         for (String akt : lengyelForm) {
             System.out.print(akt);
         }
         System.out.println("");
-=======
+
         lengyelFormAlakit(matematikai);
         ArrayList<String> lengyelform = new ArrayList<>();
         //2+6*(9-5) | 2695-*+ | Elvárt eredmény: 26
@@ -75,7 +75,7 @@ public class Szamologep {
         }
         String végeredmény = segedverem.get(0);
         return Float.parseFloat(végeredmény);
->>>>>>> 9462c2b62cef2dafb44faebcc8fec4f48384bcbc
+
     }
     
     private static float kiszámol(float érték1, char művelet, float érték2) {
