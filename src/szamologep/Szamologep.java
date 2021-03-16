@@ -33,22 +33,22 @@ public class Szamologep {
 
         lengyelForm = lengyelFormAlakit(matematikai);
         
-        for (String akt : lengyelForm) {
-            System.out.print(akt);
-        }
-        System.out.println("");
+//        for (String akt : lengyelForm) {
+//            System.out.print(akt);
+//        }
+//        System.out.println("");
 
-        lengyelFormAlakit(matematikai);
-        ArrayList<String> lengyelform = new ArrayList<>();
+//        lengyelFormAlakit(matematikai);
+//        ArrayList<String> lengyelform = new ArrayList<>();
         //2+6*(9-5) | 2695-*+ | Elvárt eredmény: 26
-        lengyelform.add("2");
-        lengyelform.add("6");
-        lengyelform.add("9");
-        lengyelform.add("5");
-        lengyelform.add("-");
-        lengyelform.add("*");
-        lengyelform.add("+");
-        System.out.println(lengyelFormSzamit(lengyelform));
+//        lengyelform.add("2");
+//        lengyelform.add("6");
+//        lengyelform.add("9");
+//        lengyelform.add("5");
+//        lengyelform.add("-");
+//        lengyelform.add("*");
+//        lengyelform.add("+");
+        System.out.println(lengyelFormSzamit(lengyelForm));
     }
 
     private static float lengyelFormSzamit(ArrayList<String> lengyelform) {
